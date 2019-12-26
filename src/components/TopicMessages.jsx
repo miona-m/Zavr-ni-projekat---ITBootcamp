@@ -47,7 +47,7 @@ const TopicMessageList = ({ match, history, user }) => {
             <h2>Topic: {topic.title} </h2>  
             <h1>Messages:</h1>
             {messages.map((messages) => { console.log('a', messages.username, messages.message, messages.timestamp);
-            return <p key={messages.message_id}><Link className='link' to={`/profile/${messages.user_id}`}>{messages.username}</Link>: {messages.message.toString()} {new Date(messages.timestamp).toLocaleTimeString({ hour12: true })} </p>
+            return <p key={messages.message_id}><Link className='link' to={`/profile/${messages.user_id}`}>{messages.username}</Link>: {messages.message.toString()} <span className='timestamp'>{new Date(messages.timestamp).toLocaleTimeString({ hour12: true })}</span> </p>
                     })}
             <form>
                 <textarea className="new-message-input" type="text" placeholder="Type your message here" onChange={e => {setNewMessage(e.target.value)}}></textarea>
