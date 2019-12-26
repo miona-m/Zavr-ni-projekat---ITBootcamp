@@ -31,7 +31,7 @@ const Register = ({setUser,history}) => {
 
     function handleSubmit(){
         if(!validPw || !isSame){
-            console.log('Potato')
+            console.log('nešto')
             return
         }
         register({name,surname,username,email,password})
@@ -39,7 +39,7 @@ const Register = ({setUser,history}) => {
             console.log(data)
             if(data.success) {
                 setUser(data.user)
-               history.push('')
+               history.push('/topics')
             }
             else console.log('Registration Error')
         })

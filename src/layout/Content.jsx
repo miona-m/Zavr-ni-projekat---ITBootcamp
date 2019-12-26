@@ -12,7 +12,7 @@ const Content = ({ setUser, user }) => {
         <Switch>
             <Route path='/register' component={(props) => <Register setUser={setUser} {...props}/>} />
             <Route path='/login' component={(props) => <Login setUser={setUser} {...props}/>} />
-            <Route path='/profile/:user_id' component={Profile} />
+            <Route path='/profile/:user_id' component= {(props) => <Profile setUser={setUser} {...props}/>} />
             <Route path='/topics' component={(props) => <TopicList user={user} {...props}/>}  />
             <Route path='/message/:message_id' component={(props) => <TopicMessageList user={user} {...props}/>} /> 
         </Switch>

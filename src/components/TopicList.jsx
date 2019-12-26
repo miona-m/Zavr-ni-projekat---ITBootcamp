@@ -41,10 +41,10 @@ const TopicList = ({ match, history, user }) => {
     
     return (
         <div className='topic-list'>
-            <h1>Teme:</h1>
+            <h1>Topics:</h1>
             {topics.map((topics) => <h2 key= {topics.topic_id} onClick={() => {
                 history.push(`/message/${topics.topic_id}`)
-            }}> {topics.title} </h2>)}
+            }}> {topics.title.toString()} </h2>)}
             <form>
                 <input type= "text" className="new-topic-title" placeholder="Title" onInput={e => {setTopicTitle(e.target.value)}}></input>
                 <textarea className="new-topic-message" type="text" placeholder="First message on this topic" onChange={e => {setFirstMessage(e.target.value)}}></textarea>

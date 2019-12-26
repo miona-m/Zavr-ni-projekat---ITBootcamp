@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getAllMessages, addMessage, getAllTopics } from '../utilities/forum-service';
+import { Link, withRouter } from 'react-router-dom'
 
 const TopicMessageList = ({ match, history, user }) => {
     console.log(match)
@@ -15,8 +16,6 @@ const TopicMessageList = ({ match, history, user }) => {
             if(data.success){
                 setTopic(data.topics.find(x=>x.topic_id===messageID));
             }
-        
-        
         })
     }
     ,[messageID])
@@ -30,7 +29,7 @@ const TopicMessageList = ({ match, history, user }) => {
     }, [messageID])
 
     function addNewMessage(){
-        console.log(username,message)
+        console.log(username, message)
         addMessage(username, message, messageID)
         .then(data => {
             if(data.success){
@@ -45,11 +44,11 @@ const TopicMessageList = ({ match, history, user }) => {
 
     return (
         <div className='topic-messages'>
-            <h2>Tema: {topic.title} </h2>  
-            <h1>Poruke:</h1>
-            {messages.map((messages) =>
-                    <p key={messages.message_id}>{messages.username}: {messages.message} {new Date(messages.timestamp).toLocaleTimeString({ hour12: true })} </p>
-                    )}
+            <h2>Topic: {topic.title} </h2>  
+            <h1>Messages:</h1>
+            {messages.map((messages) => { console.log('a', messages.username, messages.message, messages.timestamp);
+            return <p key={messages.message_id}><Link className='link' to={`/profile/${messages.user_id}`}>{messages.username}</Link>: {messages.message.toString()} {new Date(messages.timestamp).toLocaleTimeString({ hour12: true })} </p>
+                    })}
             <form>
                 <textarea className="new-message-input" type="text" placeholder="Type your message here" onChange={e => {setNewMessage(e.target.value)}}></textarea>
                 <input className="add-msg-btn" type="submit" onClick ={e => {e.preventDefault();addNewMessage()}}></input>
@@ -58,4 +57,4 @@ const TopicMessageList = ({ match, history, user }) => {
     )
 }
 
-export default TopicMessageList
+export default withRouter (TopicMessageList)

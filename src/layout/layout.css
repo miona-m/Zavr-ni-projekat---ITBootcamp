@@ -1,5 +1,14 @@
-Header {
-    padding: 3px;
+body {
+    background-image: url("C:\Users\User\Desktop\Projekat\my-forum-app\src\background.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+nav { 
+    position: fixed;
+    top: 0;
+    width:100%;
+    padding: 8px;
     text-align: right;
     background: rgb(51,51,51);
   }
@@ -31,10 +40,11 @@ Header {
 
 
 .login-form, .register-form {
-        background:rgb(51,51,51);
-        padding: 40px;
+        background:rgba(51, 51, 51);
+        padding: 30px;
         max-width:300px;
         margin:30px auto;
+        margin-top: 70px;
         box-shadow:0 4px 10px 4px rgb(51,51,51)
 }
 input{
@@ -55,7 +65,7 @@ input{
 
     /* padding:0.46em 1.6em; */
     border:1px solid rgb(76,175,80);
-    margin:0 auto;
+    margin:auto;
     width: 100%;
     border-radius:0.12em;
     box-sizing: border-box;
@@ -80,16 +90,17 @@ input{
 
 .user-profile {
     background:rgb(51,51,51);
-    padding: 40px;
+    padding: 30px;
     max-width:250px;
     margin:30px auto;
+    margin-top: 70px;
     box-shadow:0 4px 10px 4px rgb(51,51,51);
     color: white;
     font-size: 18px;
 }
 
 .topic-list, .topic-messages{
-    background:rgb(51,51,51);
+    background:rgba(51, 51, 51, 0.849);
     padding: 20px;
     max-width:100%;
     margin:5px auto;
@@ -102,20 +113,36 @@ input{
     border: solid white;
     padding: 10px;
     font-size: 20px;
+    cursor: pointer;
+}
+.topic-list h2:hover{
+    color: rgb(76,175,80);
+}
+
+.topic-messages h2{
+    margin-top: 50px;
+    border: solid white;
+    padding: 13px;
+    font-size: 30px;
+}
+
+.topic-messages h1{
+    font-size: 25px;
 }
 
 .topic-messages p{
     border: solid white;
     padding: 10px;
-    font-size: 15px;
+    font-size: 18px;
     border-radius: 5px;
-    background-color: rgba(97, 97, 97, 0.658);
+    background-color: rgba(97, 97, 97, 0.877);
 }
 
 .new-message-input, .new-topic-message{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top:25px;
     width: 500px;
     height: 80px;
     border: solid white;
@@ -131,6 +158,7 @@ input{
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
+    margin-bottom: 80px;
     width: 80px;
     border:0.1em solid rgb(76,175,80);
     border-radius:0.12em;
@@ -149,6 +177,7 @@ input{
 
 .new-topic-title {
     display: block;
+    margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
     width: 500px;
@@ -161,4 +190,38 @@ input{
     color:white;
 }
 
+.link, .link:active {
+    color:white;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.link:hover {
+    color: rgb(76,175,80);
+}
+
+footer {
+    background-color:  rgba(76, 175, 79, 0.582);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Roboto',sans-serif;
+    text-align: right;
+    color: white;
+}
+
+.link1, .link1:active {
+    color:white;
+    text-decoration: none;
+    font-weight: bolder;
+    margin-right: 15px;
+    font-size: 20px;
+} 
+
+.link1:hover {
+    color: rgb(76,175,80);
+}
 
